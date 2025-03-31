@@ -2,7 +2,7 @@
 
 ### Elevate Your Web Development Skills with a Dynamic, Futuristic Search Tool!
 
-![Quantum Bing Search](https://via.placeholder.com/800x400?text=Quantum+Bing+Search+Interface)
+![Quantum Bing Search Interface](https://imgur.com/mnOQHhP.png)
 
 ## 🟢 Project Overview
 This **Quantum-Inspired Bing Search Interface** is a modern, dynamic search tool that mimics futuristic technology aesthetics while demonstrating core web development skills. This project is perfect for beginners and aspiring developers to:

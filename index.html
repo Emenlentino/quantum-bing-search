@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Search Interface</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: linear-gradient(135deg, #1e1e2e, #2a2a40);
+            color: #e0e0e0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px #03DAC6;
+            width: 90%;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #03DAC6;
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: none;
+        }
+        input {
+            background: #33354a;
+            color: #e0e0e0;
+        }
+        button {
+            background: #03DAC6;
+            color: #1e1e2e;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #02b39a;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #BB86FC;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #03DAC6;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .glow {
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                box-shadow: 0px 0px 10px #03DAC6;
+            }
+            to {
+                box-shadow: 0px 0px 25px #03DAC6;
+            }
+        }
+    </style>
+    <script>
+        function searchQueries() {
+            const input = document.getElementById("queryInput").value.trim();
+            const count = parseInt(document.getElementById("queryCount").value);
+
+            if (!input || isNaN(count) || count <= 0 || count > 30) {
+                alert("Enter a valid query and a count between 1 and 30!");
+                return;
+            }
+
+            for (let i = 0; i < count; i++) {
+                const query = `${input} ${i + 1}`;
+                window.open(`https://www.bing.com/search?q=${encodeURIComponent(query)}`, "_blank");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container glow">
+        <h1>Quantum Bing Search</h1>
+        <input type="text" id="queryInput" placeholder="Enter search topic (e.g., Quantum Computing)">
+        <input type="number" id="queryCount" placeholder="Enter number of searches (1-30)" min="1" max="30">
+        <button onclick="searchQueries()">Initiate Quantum Search</button>
+
+        <div class="links">
+            <ul>
+                <li><a href="https://github.com/Emenlentino/" target="_blank">GitHub Channel</a></li>
+                <li><a href="https://web.facebook.com/Emenlentino/" target="_blank">Facebook Channel</a></li>
+                <li><a href="https://www.linkedin.com/in/emenlentino/" target="_blank">LinkedIn Channel</a></li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 Quantum Search Solutions | All rights reserved</p>
+        </div>
+    </div>
+</body>
+</html>
